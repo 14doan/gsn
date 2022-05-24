@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    font-size: 1rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.n{
+    background: lightblue;
+    display:flex;
+    position: sticky;
+    margin: 10px;
+    padding: 5px 10px;
+    z-index: 999;
+}
+.nLogo{
+    font-size: 2rem;
+    background: white;
+    max-width:20%;
+}
+.nList{
+    background:grey;
+    
+}
+.iLink{
+    background: lightpink;
+}
+.nMenu{
+    background: green;
+    align-items: center;
+    position: absolute;
+    right:20px;
+    top:8px;
+}
+
+.nLogo, .nList, .iLink{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    margin-right:10px;
+    width: 100%;
+
+}
+.item{
+    margin:auto;
+    background: red;
+
+}
+@media screen and (max-width:400px){
+    .nList{
+        display:grid;
+        position: absolute;
+        top:0;
+        left:0;
+        opacity:0.5;
+        top:-100px;
+        transition: all 0.2s ease-in; /*it will ease into above position*/
+
+    }
+    .bar{
+        width:30px;
+        height:3px;
+        background: white;
+        display:block;
+        margin:5px auto;
+        cursor:pointer;
+        transition:all 0.1s ease;
+    }
+    .nList.active{
+        top:50px;
+        opacity: 1;
+        z-index:99;
+        transition:all 0.2s ease-in;
+    }
+    
+    #mToggle{
+        z-index:100;
+    }
+    #mToggle.is-active .bar:nth-child(2){
+        opacity:0;
+    }
+    #mToggle.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mToggle.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+.fSlider{
+    margin:30px auto;
+    width:550px;
+    height:500px;
+    overflow: hidden;/*hides images beside it.
+    images that dont fit the frame made via width & margin*/
+    border-radius: 50px;
+}
+.fSlides{
+    display:flex;
+    width:400%;/*% not px because there are 4slides
+    and you need one to take the space of all 4*/
+    height:500px;
+}
+.fSlides input{
+    display:none;
+}
+.slide{
+    width:25%;
+    transition: 1s;
+}
+.slide img{
+    width:550px;
+    height:500px;
+}
+
+
+.manNav{
+    position:absolute;
+    display:flex;
+    margin-top:-30px;
+    justify-content: center;
+    width:550px;
+}
+.m-btn{
+    border:5px solid lightblue;
+    border-radius: 10px;
+    padding:5px;
+    cursor: pointer;
+    transition: 1s;
+}
+.m-btn:not(:last-child){
+    margin-right:40px;
+}
+.m-btn:hover{
+    background:lightblue;
+}
+#r1:checked ~ .first{margin-left: 0%;} 
+/* if the value is 0 and not 0%, 
+sliding won't take place between r1 and r2*/
+#r2:checked ~ .first{margin-left: -25%;}
+#r3:checked ~ .first{margin-left: -50%;}
+#r4:checked ~ .first{margin-left: -75%;}
+/* the tilde char ~ means sibbling combinator.
+where selectors involved must have the same parent(fSlides).
+and the selector on the right must come after the left
+in the index page.*/ 
+
+
+.autoNav{
+    position:absolute;
+    display:flex;
+    width: 550px;
+    justify-content: center;
+    margin-top: 470px;
+}
+.autoNav div{
+    border: 5px solid lightblue;
+    padding:5px;
+    border-radius:10px;
+    transition:1s;
+}
+.autoNav div:not(:last-child){
+    margin-right:40px;
+}
+#r1:checked ~ .autoNav .a-btn1{background: lightblue;}
+#r2:checked ~ .autoNav .a-btn2{background: lightblue;}
+#r3:checked ~ .autoNav .a-btn3{background: lightblue;}
+#r4:checked ~ .autoNav .a-btn4{background: lightblue;}

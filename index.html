@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="n">
+        <a href="/" class="nLogo">GSN</a>
+        <div class="nMenu" id="mToggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nList">
+            <li class="item">
+                <a href="/" class="iLink">Press-Ons</a>
+            </li>
+            <li class="item">
+                <a href="/" class="iLink">Decals</a>
+            </li>
+            <li class="item">
+                <a href="/" class="iLink">Tools</a>
+            </li>
+            <li class="item">
+                <a href="/" class="iLink">Accessories</a>
+            </li>
+        </ul>
+    </nav>
+    <script src="app.js"></script>
+
+    <div class="fSlider">
+        <div class="fSlides">
+            <input type="radio" name="r-btn" id="r1">
+            <input type="radio" name="r-btn" id="r2">
+            <input type="radio" name="r-btn" id="r3">
+            <input type="radio" name="r-btn" id="r4">
+            <div class="slide first"><img src="images/n1.jpeg" alt="pink barbie nails"></div>
+            <div class="slide"><img src="images/n2.jpeg" alt="pearl nails"></div>
+            <div class="slide"><img src="images/n3.jpeg" alt="sailor moon nails"></div>
+            <div class="slide"><img src="images/n4.jpeg" alt="henna nails"></div>
+            <div class="autoNav"><!--
+                this class has to be sibbling to the radio tags,
+                in order for the general-sibling combinator ~ in #r1:checked~ autoNav a-btn1{...} to work
+                to fill the circle button, indicating which slide it's on. 
+            -->
+                <div class="a-btn1"></div>
+                <div class="a-btn2"></div>
+                <div class="a-btn3"></div>
+                <div class="a-btn4"></div>
+            </div>
+        </div>
+        
+
+        <div class="manNav">
+            <label for="r1" class="m-btn"></label>
+            <label for="r2" class="m-btn"></label>
+            <label for="r3" class="m-btn"></label>
+            <label for="r4" class="m-btn"></label>
+        </div>
+    </div>
+    
+</body>
+</html>
